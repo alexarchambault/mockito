@@ -219,9 +219,13 @@ public class StubbingUsingDoReturnTest extends TestBase {
     @Test
     public void should_stubbing_be_treated_as_interaction() {
         doReturn("foo").when(mock).simpleMethod();
+        System.err.println("Calling simpleMethod on mock");
         mock.simpleMethod();
+        System.err.println("Called simpleMethod on mock");
         try {
+            System.err.println("Calling verifyNoMoreInteractions on mock");
             verifyNoMoreInteractions(mock);
+            System.err.println("Called verifyNoMoreInteractions on mock (test will likely fail)");
             fail();
         } catch (NoInteractionsWanted e) {
         }

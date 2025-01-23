@@ -208,8 +208,10 @@ public class MockitoCore {
                     throw nullPassedToVerifyNoMoreInteractions();
                 }
                 InvocationContainerImpl invocations = getInvocationContainer(mock);
+                System.err.println("Invocations: " + invocations);
                 assertNotStubOnlyMock(mock);
                 VerificationDataImpl data = new VerificationDataImpl(invocations, null);
+                System.err.println("Verification data: " + data);
                 noMoreInteractions().verify(data);
             } catch (NotAMockException e) {
                 throw notAMockPassedToVerifyNoMoreInteractions();
