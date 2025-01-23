@@ -109,8 +109,8 @@ public class InvocationsFinder {
         for (Invocation i : invocations) {
             System.err.println("findFirstUnverified checking " + i);
             boolean mockIsValid = mock == null || mock == i.getMock();
-            System.err.println("findFirstUnverified mockIsValid:" + mockIsValid);
-            System.err.println("findFirstUnverified i.isVerified():" + i.isVerified());
+            System.err.println("findFirstUnverified mockIsValid: " + mockIsValid);
+            System.err.println("findFirstUnverified i.isVerified(): " + i.isVerified());
             if (!i.isVerified() && mockIsValid) {
                 return i;
             }

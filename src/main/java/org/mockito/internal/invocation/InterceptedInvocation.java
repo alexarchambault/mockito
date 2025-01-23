@@ -80,6 +80,10 @@ public class InterceptedInvocation implements Invocation, VerificationAwareInvoc
 
     @Override
     public void markVerified() {
+        if (this.toString().equals("mock.simpleMethod();")) {
+            System.err.println("Invocation " + this + ": markVerified()");
+            new Exception().printStackTrace(System.err);
+        }
         verified = true;
     }
 
