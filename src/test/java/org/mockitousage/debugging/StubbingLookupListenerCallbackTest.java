@@ -199,7 +199,7 @@ public class StubbingLookupListenerCallbackTest extends TestBase {
         // then
         // This assertion may be flaky. If it is let's fix it or remove the test. For now, I'm
         // keeping the test.
-        ;
+        assertEquals(50, settings.getStubbingLookupListeners().size());
     }
 
     private static class NoWater extends RuntimeException {}
